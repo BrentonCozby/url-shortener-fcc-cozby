@@ -1,26 +1,33 @@
 {
-  "name": "node-js-getting-started",
-  "version": "0.2.5",
-  "description": "A sample Node.js app using Express 4",
+  "name": "url-shortener-fcc-cozby",
+  "version": "0.0.0",
+  "description": "A url shortener. A Free Code Camp backend project.",
   "engines": {
     "node": "5.9.1"
   },
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
-    "start": "node index.js"
-  },
-  "dependencies": {
-    "ejs": "2.4.1",
-    "express": "4.13.3"
+    "start": "node app.js"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/heroku/node-js-getting-started"
+    "url": "git+https://github.com/BrentonCozby/url-shortener-fcc-cozby.git"
   },
   "keywords": [
     "node",
     "heroku",
-    "express"
+    "express",
+    "freeCodeCamp"
   ],
-  "license": "MIT"
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/BrentonCozby/url-shortener-fcc-cozby/issues"
+  },
+  "homepage": "https://github.com/BrentonCozby/url-shortener-fcc-cozby#readme",
+  "author": "Brenton Cozby -- brenton.cozby@gmail.com",
+  "dependencies": {
+    "ejs": "^2.5.5",
+    "express": "^4.14.0",
+    "mongodb": "^2.2.21"
+  }
 }
