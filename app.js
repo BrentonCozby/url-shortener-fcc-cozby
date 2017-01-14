@@ -38,15 +38,10 @@ app.post('/shorten', (req, res) => {
             if(err) return console.log(err);
 
             if (data.length === 0) {
-                collection.update({
-                    count: {
-                        $exists: true
-                    }
-                }, {
-                    $inc: {
-                        count: 1
-                    }
-                });
+                collection.update(
+                    {count: {$exists: true}},
+                    {$inc: {count: 1}}
+                );
 
                 path++;
 
@@ -58,18 +53,25 @@ app.post('/shorten', (req, res) => {
                 db.close();
             }
 
-            var shortenedUrl = 'https://url-shortener-fcc-cozby.heroku.com/#/' + path;
+            var shortenedUrl = 'https://url-shortener-fcc-cozby.heroku.com/short/' + path;
+            // var shortenedUrl = 'localhost:5000/short/' + path;
 
             res.send(shortenedUrl);
         });
     });
 });
 
-app.get('/#/:path', (req, res) => {
+app.get('/short/:path', (req, res) => {
     MongoClient.connect(mongoUrl, (err, db) => {
         db.collection('urls').find({path: +req.params.path}).toArray((err, data) => {
             db.close();
-            res.redirect(data[0].longUrl);
+            var url = data[0].longUrl;
+
+            if(data[0].longUrl.split('http').length === 1) {
+                url = 'http://' + url;
+            }
+
+            res.redirect(url);
         });
     });
 });
