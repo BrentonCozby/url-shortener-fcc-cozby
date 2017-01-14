@@ -12,6 +12,7 @@ urlForm.submit(function(e) {
     })
     .done(res => {
         shortUrl.attr('href', res);
+        shortUrl.html(res);
         shortUrlLabel.fadeIn();
     })
     .fail(function() {
