@@ -1,13 +1,31 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-  <% include ../partials/header.ejs %>
+    <% include ../partials/header.ejs %>
 </head>
 
 <body>
 
-    <h1>URL Shortener</h1>
-    <p>A Free Code Camp project, created by <a href="https://brentoncozby.com">Brenton Cozby</a>.</p>
+    <div class="container">
+        <h1>URL Shortener</h1>
+        <p>A Free Code Camp project, created by <a href="https://brentoncozby.com">Brenton Cozby</a>.</p>
+        <br>
+        <form id="url-form">
+            <div class="form-group">
+                <label class="url-input-label" for="url-input">Long URL</label>
+                <input type="text" name="urlInput" class="url-input form-control" id="url-input">
+            </div>
+        </form>
+        <br>
+        <label class="short-url-label" id="short-url-label" for="short-url">Shortened URL</label>
+        <p class="short-url" id="short-url"></p>
 
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="./js/main.js"></script>
 </body>
+
 </html>
