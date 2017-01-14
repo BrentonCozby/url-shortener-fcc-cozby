@@ -53,12 +53,12 @@ app.post('/shorten', (req, res) => {
                 db.close();
             }
 
-            res.json({path: path});
+            res.json({path: 's/' + path});
         });
     });
 });
 
-app.get('/short/:path', (req, res) => {
+app.get('/s/:path', (req, res) => {
     MongoClient.connect(mongoUrl, (err, db) => {
         db.collection('urls').find({path: +req.params.path}).toArray((err, data) => {
             db.close();

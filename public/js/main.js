@@ -10,8 +10,8 @@ urlForm.submit(function(e) {
         data: urlForm.serialize()
     })
     .done(res => {
-        shortUrl.attr('href', window.location.href + 'short/' + res.path);
-        shortUrl.html(window.location.href + 'short/' + res.path);
+        shortUrl.attr('href', window.location.href + res.path);
+        shortUrl.html(window.location.href + res.path);
         shortUrl.fadeIn();
     })
     .fail(function() {
