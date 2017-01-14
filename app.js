@@ -53,10 +53,7 @@ app.post('/shorten', (req, res) => {
                 db.close();
             }
 
-            var shortenedUrl = 'https://url-shortener-fcc-cozby.heroku.com/short/' + path;
-            // var shortenedUrl = 'localhost:5000/short/' + path;
-
-            res.send(shortenedUrl);
+            res.json({path: path});
         });
     });
 });

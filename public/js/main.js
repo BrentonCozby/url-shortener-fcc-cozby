@@ -11,8 +11,8 @@ urlForm.submit(function(e) {
         data: urlForm.serialize()
     })
     .done(res => {
-        shortUrl.attr('href', res);
-        shortUrl.html(res);
+        shortUrl.attr('href', window.location.href + 'short/' + res.path);
+        shortUrl.html(window.location.href + 'short/' + res.path);
         shortUrlLabel.fadeIn();
     })
     .fail(function() {
