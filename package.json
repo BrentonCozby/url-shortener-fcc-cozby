@@ -27,9 +27,9 @@
   "homepage": "https://github.com/BrentonCozby/url-shortener-fcc-cozby#readme",
   "author": "Brenton Cozby -- brenton.cozby@gmail.com",
   "dependencies": {
-    "body-parser": "^1.15.2",
+    "body-parser": "^1.19.2",
     "ejs": "^3.1.6",
-    "express": "^4.14.0",
+    "express": "^4.17.3",
     "mongodb": "^2.2.21"
   }
 }
